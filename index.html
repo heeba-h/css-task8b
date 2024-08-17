@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Fixed Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 200px;
+            height: calc(100% - 50px); /* Full height minus the header */
+            background-color: #555;
+            color: white;
+            padding: 20px;
+            z-index: 900;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 220px; /* Space for the sidebar */
+            padding: 20px;
+        }
+
+        /* Sticky Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 800;
+        }
+
+        /* Absolutely Positioned Element */
+        .parent {
+            position: relative;
+            background-color: lightblue;
+            padding: 50px;
+            margin: 20px 0;
+        }
+
+        .child {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Modal/Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border: 2px solid #333;
+            z-index: 1100;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .show-modal {
+            display: block;
+        }
+
+        /* Button to Open Modal */
+        .open-modal-btn {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <div class="header">
+        Sticky Header
+    </div>
+
+    <!-- Fixed Sidebar -->
+    <div class="sidebar">
+        Fixed Sidebar
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>PAGE CONTENT </h1>
+        <H1>TASK ON CSS POSITIONS </H1>
+        <p>Scroll down to see the footer. The sidebar stays fixed on the left, and the header stays at the top.</p>
+
+        <p>The world of technology is rapidly evolving, with innovations and advancements transforming how we live, work, and interact. 
+            In recent years, the rise of artificial intelligence (AI) has been at the forefront, revolutionizing various industries with machine learning, natural language processing, and robotics. 
+            AI's ability to analyze vast amounts of data and make predictions has paved the way for autonomous vehicles, personalized healthcare, and smart cities, where infrastructure and resources are managed more efficiently. 
+            Quantum computing is another groundbreaking technology poised to change the landscape of computation. 
+            Unlike traditional computers that use bits to process information as 0s or 1s, quantum computers use qubits, which can represent both 0 and 1 simultaneously, allowing for exponentially faster processing power. 
+            This has significant implications for cryptography, drug discovery, and complex problem-solving. 
+<BR>
+    <BR>
+        <BR>
+            <BR>
+
+            The Internet of Things (IoT) continues to expand, connecting billions of devices globally and enabling seamless communication between physical objects and digital systems.
+             Smart homes, wearables, and industrial IoT applications are enhancing convenience, safety, and productivity, with real-time data collection and analysis driving informed decision-making. 
+             Blockchain technology, known for its role in cryptocurrencies like Bitcoin, is gaining traction in sectors such as finance, supply chain management, and healthcare. 
+             Its decentralized and transparent nature ensures secure and immutable records, reducing fraud and enhancing trust in digital transactions. 
+             <BR>
+                <BR>
+                    <BR>
+                        <BR>
+            5G technology is reshaping telecommunications, providing faster internet speeds, lower latency, and the ability to support a massive number of connected devices. 
+            This fifth-generation network is crucial for enabling next-gen technologies like augmented reality (AR), virtual reality (VR), and autonomous systems, all of which require robust and reliable connectivity. 
+            Edge computing is also gaining momentum as it brings computation and data storage closer to the source of data generation, reducing latency and bandwidth usage.
+             This is particularly important for applications requiring real-time processing, such as autonomous vehicles and industrial automation.
+             <BR>
+                <BR>
+                    <BR>
+                        <BR>
+            In healthcare, advancements in biotechnology and telemedicine are revolutionizing patient care.
+             Gene editing tools like CRISPR are enabling scientists to alter DNA with precision, offering potential cures for genetic disorders and advancing personalized medicine. 
+             Telemedicine has surged, particularly during the COVID-19 pandemic, making healthcare more accessible by allowing patients to consult with doctors remotely.
+              Wearable health devices are also becoming more sophisticated, monitoring everything from heart rate to glucose levels, and providing real-time health insights.
+              <BR>
+                <BR>
+                    <BR>
+                        <BR>
+            Overall, the latest technological advancements are not just incremental improvements but transformative shifts that are redefining the boundaries of what's possible. 
+            As these technologies continue to evolve, they promise to address some of the world's most pressing challenges, from climate change to global health, while also raising important ethical and societal questions about their impact on privacy, security, and human interaction. 
+            The future of technology is not just about more powerful devices or faster processing speeds; it's about creating a more connected, efficient, and equitable world.</p>
+        
+            Ready to find out which of these career paths is the best fit for you? Keep reading!
+
+            1. Where do UX/UI designers, web developers, data analysts, digital marketers, and product managers fit into tech?
+            When it comes to the tech industry, there are many different paths you can follow.
+            
+            UX design, UI design, web development, data analytics, product management, and digital marketing all offer exciting, fulfilling, and financially rewarding careers—but each role is unique.
+            
+            So, before you decide on a particular field, it’s important to understand exactly what each role entails. First, though, let’s consider how all of these roles fit together in the context of business.
+            
+            Let’s imagine an e-commerce startup—we’ll call it Beautify. Beautify creates their own all-natural cosmetics and sells them online via their website.
+            
+            Some of the key team members behind this small but successful startup include a UX designer, a UI designer, a web developer, a data analyst, a digital marketer, and a product manager.
+            
+            But what do they do?
+            
+            The UX designer
+            The UX designer is responsible for ensuring that every aspect of the Beautify experience is smooth and enjoyable for the user.
+            
+            Is the website easy to navigate? Can customers quickly find what they are looking for? Is the checkout process straightforward?
+            
+            Based on user research, the UX designer finds out who Beautify’s target customers are, what they need and expect from the Beautify shopping experience, and where their pain-points and frustrations lie. They then use these insights to make smart decisions about how the Beautify website should be laid out and designed.
+            
+            The UI designer
+            With the user journey mapped out by the UX designer, the user interface (UI) designer is responsible for all the visual and interactive elements that guide the user through this journey.
+            
+            What touchpoints does the customer use to navigate from A to B? How do they move from one screen to another? What happens when they click a certain button or swipe from right to left? How can patterns, color, and spacing be used to guide the user?
+            
+            The web developer
+            Together, the UX and UI designers make sure that the Beautify website is logical, intuitive, and accessible from a design perspective. Then there’s the web developer who brings it all to life!
+            
+            Beautify have hired a full-stack developer who can handle both the frontend and the backend of the website. They code the designs into a fully functional website, and make sure that everything works as it should.
+            
+            The data analyst
+            With the website up and running, things seem to be going pretty well for Beautify. Now the CEO is keen to start implementing a data-driven approach, so they decide to hire a data analyst.
+            
+            The data analyst monitors the Beautify website to see how it performs, analyzes business trends, and delves into customer data to see how Beautify’s shoppers behave.
+            
+            Based on these insights, they work with the design, marketing, and product teams to enhance and improve the Beautify customer experience.
+            
+            The digital marketer
+            Everything is in place for a wonderful user experience! Now it’s essential that Beautify connects with the people who can benefit from their all-natural cosmetics.
+            
+            This is where the digital marketer steps in! The digital marketer communicates the value of Beautify’s products (and the brand in general) through a whole host of different content, distributed across the key channels where Beautify’s customers are likely to spend time—namely, Instagram, YouTube, and email.
+            
+            The digital marketer devises marketing campaigns that build brand awareness, attract loyal customers, and grow an entire Beautify community.
+            
+            The product manager
+            Content with its success, Beautify is looking to do two things—ensure this continues by making sure that their existing products are still making customers happy and meeting their needs, and to build on this success by launching new products.
+            
+            Enter the product manager.
+            
+            What they will do is work with the UX designer and data analyst to gather information about what the customers enjoy, don’t enjoy, and identify their needs. From this, they’ll create user stories, engage with the different stakeholders across the other five job types here and more, and develop a strategy for a product release.
+            
+            During that time, the product manager will be the go-to person for Beautify’s products.
+            
+            A user experience designer drawing on a whiteboard
+            
+            We’ve barely scratched the surface on what UX designers, UI designers, web developers, data analysts, product managers and digital marketers do and how they add value to business—but as you can see, they each represent a unique yet crucial piece of the puzzle. With that in mind, let’s explore each of these career paths in more detail.
+            
+            2. Career overview: User experience (UX) designer
+            User experience (UX) design considers all the different elements that shape a particular experience from the user’s perspective—whether it’s the layout of a website or the placing of labels and signposts in a department store. It’s the UX designer’s job to design products, services, and experiences that are user-friendly, intuitive, efficient, and enjoyable.
+            
+            If you’re considering UX design as a potential career path, you’ll want to know what kinds of tasks you can expect on a day-to-day basis, as well as what skills and qualities are typically associated with the field. So let’s take a look!
+            
+            What does a UX designer do? Day-to-day tasks
+            The UX design process consists of user research, wireframing and prototyping, and user testing. Within these broader steps, UX designers may be responsible for:
+            
+            Interviewing users
+            Gathering user feedback through surveys and questionnaires
+            Analyzing research data and identifying trends and patterns
+            Creating user personas
+            Defining the information architecture of a digital product
+            Creating wireframes
+            Creating prototypes
+            Conducting usability testing sessions with users
+            Facilitating workshops
+            It’s important to understand that UX designers aren’t typically responsible for the visual design of a product—it’s more about the product’s architecture and the overall experience it provides.
+            
+            The role of the UX designer will also vary depending on the kind of company you work for. In a small startup, you might be responsible for all aspects of the product design process, whereas in a larger company, this might be split out among several specialists.
+            
+            Learn more here:
+            
+            What does a UX designer actually do?
+            Unique challenges that remote UX designers face
+            What are the key traits of a UX designer?
+            UX designers come from all walks of life and professional backgrounds; you don’t need a certain degree or experience in a specific field. It’s entirely possible to learn UX design from scratch, and because it’s such a multidisciplinary field, you’ll find that many of your current skills can be transferred and applied.
+            
+            To excel as a UX designer, you’ll need to exhibit the following:
+            
+            Empathy. The best UX designers are able to step into the user’s shoes and really empathize with what they’re feeling and experiencing. Without empathy, it’s impossible to design products and services that put the user first, so this is a skill you’ll need to master. The good news is that empathy can be learned—start training your empathy muscle with these empathy-building techniques.
+            A creative and analytical mindset. UX design is one of the few fields that combines both creativity and analytical thinking. One part of the role will see you conducting user research and analyzing the results, identifying patterns and trends in the data. Based on these insights, you’ll then need to get creative with the actual design part, coming up with ideas and figuring out the best way to meet the user’s needs.
+            A penchant for problem-solving. As a UX designer, you are essentially designing to solve a specific user problem. At the same time, you’ll need to work within certain time and budget constraints. Ultimately, it’s your job to find a solution that serves both the user and the business goals, so keen problem-solving skills are a must.
+            UX designers also need excellent communication skills—it’s a highly collaborative field, and you’ll work closely with business stakeholders, fellow designers, product owners, developers, and, of course, real users.
+            
+            Become a UX designer if…
+            All in all, UX design is a great career path if you like getting to the heart of what people need, getting hands-on with design, and having an impact on the products and services around you. As a UX designer, you can expect a varied range of tasks, plenty of collaboration, and a role that is both creative and somewhat analytical.
+            
+            Keen to give UX design a try? Sign up to our free introductory UX design short course.
+            
+            A user interface designer drinking coffee
+            
+            3. Career overview: User interface (UI) designer
+            The term “user interface” is used to describe the space where interactions between humans and machines occur—like the touchscreen on your smartphone, for example. While UX design focuses on optimizing a product for effective and enjoyable use, UI design focuses on the look and feel of the product interface.
+            
+            UI design is a crucial subset of UX, but it’s important to be aware that UX and UI design are two different things. UI designer is a job title in its own right, requiring a unique set of skills and qualities. So what does a career as a UI designer entail? Let’s find out.
+            
+            What does a UI designer do? Day-to-day tasks
+            UI designers are responsible for all the visual, interactive aspects of a digital experience. They design all the screens through which a user moves, as well as the interactive elements that facilitate this movement—like buttons and scrollbars.
+            
+            On a day-to-day basis, user interface (UI) designers may be responsible for:
+            
+            Creating a visual style guide to be used across the entire product, ensuring consistency for the user
+            Designing individual screens, deciding which elements should go where
+            Establishing visual patterns and hierarchies
+            Designing UI elements such as buttons, icons, sliders, and scrollbars
+            Designing the interactivity of each UI element—what happens when a user clicks on a button, for example
+            Choosing color palettes and typeface
+            Creating animations
+            Creating interactive digital prototypes
+            While most of the UI designer’s tasks focus on the visual and interactive elements of design, there is also a psychological aspect to the role. UI designers will design each screen with the user in mind, considering how buttons, typography, color, and spacing help to create an intuitive, accessible, user-friendly experience.
+            
+            Learn more:
+            
+            What does a UI designer actually do?
+            The 5 big differences between UX and UI design
+            5 Color palette trends that will brighten your world
+            What are the key traits of a UI designer?
+            UI designers aren’t just responsible for making apps and websites look pretty; they carefully weigh up what each design choice means for the end user. To excel as a user interface designer, you’ll need the following:
+            
+            A keen eye for aesthetics. As a UI designer, you’ll work with colors, typography, spacing, patterns, and icons to make sure that the product looks its best. You don’t need to have a background in visual or graphic design, but you’ll certainly need to develop a sharp eye for detail.
+            An interest in human users. UI design is not just about making things look good; it’s all about understanding how the visual, interactive properties of a product help to ensure a positive user experience. It’s therefore important to have some interest in human behaviour and interactivity principles.
+            A little bit of tech know-how. UI designers work within the tech sphere, ensuring that the design is scalable and responsive for different devices and screen sizes. They also work with various digital tools such as Sketch, InVision, and Balsamiq. We’ve put together a list of essential UI design tools for beginners. You don’t need to be a tech whizz to work as a UI designer, but a little bit of know-how will set you in good stead.
+            At the same time, UI designers must be able to work as part of a team. The role involves close collaboration with UX designers and developers, so communication is key. Just like UX designers, UI designers also need to be keen problem-solvers.
+            
+            Become a UI designer if…
+            UI design offers a highly creative career path that allows you to put your flair for visual design to good use. Consider becoming a UI designer if you care about making technology beautiful, user-friendly, and accessible, are interested in interactive design principles, and enjoy getting hands-on with design.
+            
+            Want to see if UI design is right for you? Try it out for free with our introductory UI design short course.
+            
+            4. Why are UX and UI roles often advertised as one?
+            If you’re considering becoming a UI or UX designer and have already browsed for jobs, you’ll have noticed lots of job ads for UX/UI designers. If UX and UI design are two separate fields, why is it that the two are often lumped together under one job title?
+            
+            User interface and UX design are still relatively new fields—which means they are not as widely understood as, say, graphic design or dentistry. Oftentimes, they are considered to go hand-in-hand and to be done by the same person—hence the catch-all job ads you’ll come across time and time again.
+            
+            Perhaps the person writing the job ad isn’t fully aware of the differences between UX and UI design, and views them as one job title. Often, though, companies will deliberately seek out designers who can cover both UX and UI. So how do you determine what’s really going on?
+            
+            When browsing for jobs, it’s important to look beyond the job title and pay close attention to the actual job description. Do the tasks and responsibilities listed sound more like the work of a UX designer or a UI designer? Does it sound like the role combines both, or is the owner of the job ad just mistaking UX for UI or vice versa?
+            
+            If you’re keen to focus solely on UI design, it can be disheartening to see hundreds of UX/UI or UX-only job ads compared to just a handful of UI design openings—but don’t let that deter you. Look closely at the skills and requirements to find those roles that are really looking for a UI designer.
+            
+            If you’re interested in both UX and UI design, you might be wondering which program to take. Let’s consider your options now.
+            
+            Which program should I take—UX or UI design?
+            If you’d like to work as a UI designer, take the UI design program. While focusing primarily on the skills and tools you’ll need as a UI designer, it also covers the fundamentals of UX design. After the UI design program, you’ll be able to apply for UI design roles that require some knowledge of UX. Remember: These roles will often be titled “UX/UI design”, so bear that in mind when conducting your UI design job search!
+            
+            If you want to focus your career on UX design but also like the idea of mastering some UI design skills, we recommend taking the UX design program which includes a UI design specialization. Again, you’ll become an expert in UX while learning some key UI principles which will set you in good stead for a combined role.
+            
+            If you want to focus your career on UX design but also like the idea of mastering some UI design skills, we recommend starting with the Intro to UX Design Course. The product design process starts with UX, after all, so the fundamentals of UX is a good place to start your career as a designer.
+            
+            After this one-month course, you’ll have a much better idea of whether you want to continue on the UX path or if you’d rather go on to master the art of UI.
+            
+            A web developer working on a laptop
+            
+            5. Career overview: Web developer
+            Web development is the process of building websites and applications. It’s not necessarily about the design of a website, but rather, the coding and programming that powers the website’s functionality.
+            
+            You’ll find a detailed explanation of what web development is in this guide. For now, though, let’s look at what a web developer actually does.
+            
+            Curious about our free courses?
+            Start learning for free! 
+            
+            What does a web developer do? Day-to-day tasks
+            Web developers build and maintain websites, apps, software, and systems. Web developers can work on the frontend, the backend, or across the full technology stack.
+            
+            You can learn more about the differences between the first two in our guide to frontend vs backend development.
+            
+            As a web developer, you might find yourself responsible for the following tasks:
+            
+            Bringing the UX and UI designers’ designs to life using HTML, CSS, and JavaScript
+            Ensuring optimal display across different browsers and devices
+            Building and maintaining the technology needed to power the frontend (the elements of a website that the user sees)
+            Creating and managing databases
+            Carrying out usability tests and fixing bugs
+            Building server-side software using backend frameworks
+            Developing and deploying content management systems (for a blog, for example)
+            Liaising with product owners to determine the needs and specifications of the product
+            Advising on strategy and best practices
+            Ultimately, web developers are responsible for building a product that meets the client or business owner’s needs, as well as those of the customer or end user. In addition to getting hands-on with code and fixing bugs, web developers spend time collaborating with stakeholders, clients, and designers in order to understand how the final website (or product) should look and function.
+            
+            Learn more: What does a web developer actually do?
+            
+            What are the key traits of a web developer?
+            Believe it or not, you don’t need loads of formal qualifications to become a web developer. If you’re thinking about a career in web development, consider whether you possess the following:
+            
+            A passion for problem-solving. Whether you’re writing code from scratch or fixing bugs and errors, you’ll find that much of your work as a web developer is an exercise in problem-solving—so make sure this is something you enjoy.
+            A knack for building things. Web developers use languages, libraries, frameworks, and a whole host of other tools to build things from scratch—from websites and apps to software and databases. Web developers therefore tend to be good at (and passionate about) understanding how different components fit together to form a functional end product.
+            Patience, perseverance, and a desire for constant learning. When programming, you’ll constantly hit obstacles—it’s all part and parcel of being a web developer. For some, this is a challenge that motivates them. For others, it’s a source of major frustration and dissatisfaction. If you’re considering a career in web development, you’ll need a certain degree of patience and perseverance. 
+            It’s important to note that a career in web development is not just about sitting behind a screen and hacking away at code. You’ll also need to be an excellent communicator, as you’ll be collaborating closely with other teams—especially if you’re working in an in-house role. It also helps if you can think strategically and learn to create solutions that benefit both the user and the business.
+            
+            Become a web developer if…
+            A career in web development will put you right at the forefront of technology.
+            
+            If you like the idea of mastering different programming languages and web technologies, building products from scratch, identifying and solving problems, and being part of a field that requires constant learning, you’ll likely find yourself right at home in the world of web development.
+            
+            Want to try your hand at some of the fundamentals of web development? Sign up for our free introductory web development short course.
+            
+            A data analyst sitting at a desk
+            
+            6. Career overview: Data analyst
+            Data analytics is all about collecting, processing, and analyzing data in order to derive meaningful and actionable insights. These insights can then be used to make smart business decisions.
+            
+            With data having overtaken oil as the world’s most valuable commodity, those who can analyze and understand data are in high demand. So what does a data analyst actually do? Let’s find out.
+            
+            What does a data analyst do? Day-to-day tasks
+            Data analysts are a bit like translators, turning raw data into something meaningful that others can understand.
+            
+            They study data in order to identify trends that can be used to predict future patterns and behaviors. In a business setting, this helps to eliminate the guesswork and instead come up with strategies that are based on real insights.
+            
+            As a data analyst, you may be responsible for:
+            
+            Setting up and optimizing systems and processes for collecting data
+            Cleansing datasets in order to remove any irrelevant, incomplete, or inaccurate data
+            Using statistical and analytics tools to analyze data
+            Identifying trends and patterns in the data
+            Creating visualizations of the data, such as charts and graphs
+            Producing reports in order to present and share the insights derived
+            Working with multidisciplinary teams to devise business strategies and set KPIs
+            Data analysts tend to spend a large part of their day on the computer, working with relevant programs and tools.
+            
+            However, data analysts aren’t as solitary as you might imagine; they are also responsible for sharing their insights and advising various stakeholders on how to make data-driven decisions.
+            
+            What are the key traits of a data analyst?
+            If you’re considering a career as a data analyst, an affinity for data and statistics is a good starting point. Data analysts also tend to be:
+            
+            Curious and inquisitive. Data analytics is all about delving into data and seeking out patterns and trends. You can think of yourself as a detective, figuring out the story that the data is trying to tell you.
+            Methodical and analytical. As the name suggests, data analysts are extremely analytical. They take a highly methodical approach to their work: gathering the data, cleansing it, analyzing it, and deducing and sharing insights.
+            Business-savvy. Data analysts bring immense value to organizations by showing them how data can be used to drive strategies and crucial decisions. It is therefore essential that data analysts possess a certain degree of business acumen—or at least have an interest in how data and business go hand in hand.
+            It’s important to note that data analysts are not the same as data scientists. You can learn all about the differences between a data analyst and a data scientist in this guide.
+            
+            Become a data analyst if…
+            A career as a data analyst will see you getting hands-on with data and also playing a crucial role in how business decisions are made. Consider becoming a data analyst if you are at home with numbers and statistics, if you prefer a more methodical and rational approach to your work, and if you want to have an impact at strategic level.
+            
+            Learn more: What is data analytics?
+            
+            7. Career overview: Digital marketer
+            Digital marketing is a broad umbrella term used to describe any kind of marketing that’s carried out online.
+            
+            Companies use digital marketing to connect with their target customers in different ways, and through a mixture of different content and channels—such as search engines like Google and Bing, social media platforms like Twitter and Instagram, email, or their own website or blog.
+            
+            So what does a digital marketing professional actually do? Let’s take a look.
+            
+            What does a digital marketer do? Day-to-day tasks
+            Digital marketers are responsible for devising and implementing marketing campaigns across a variety of channels, and using data to monitor campaign performance.
+            
+            The role therefore requires a good mix of strategic thinking, creative flair, and an affinity with data. The exact tasks and responsibilities of a digital marketer will depend on whether you choose to generalize—for example, as a digital marketing manager—or specialize, focusing on just one domain, such as performance marketing, social media management, or editorial content and copywriting.
+            
+            Given the broad and varied nature of digital marketing, it’s difficult to pin down a hard-and-fast list of tasks and responsibilities. However, if you do venture into digital marketing, you can expect to be responsible for at least some of the following:
+            
+            Developing a multi-channel marketing strategy for the company or brand
+            Creating and distributing content in various formats (e.g. blog posts, infographics, videos, emails)
+            Conducting research in order to understand the target audience (e.g. creating user personas)
+            Conducting keyword research in order to identify relevant content topics
+            Running tests to see which formats or versions of content perform better
+            Working with external stakeholders to establish content partnerships
+            Working with internal stakeholders such as designers and product managers to align on branding
+            Utilizing data analytics tools to monitor performance across different channels
+            Digital marketers tend to work in a highly collaborative environment, often coordinating with designers and copywriters to bring a campaign or strategy to life, and working closely with the business side to make sure that marketing goals are aligned with wider company goals.
+            
+            What are the key traits of a digital marketer?
+            If you’re considering a career in digital marketing, you’ll want to possess an innate curiosity for people and what kind of digital marketing content can resonate with an audience. Digital marketers also tend to be:
+            
+            Creative and experimental. Digital marketing is all about coming up with ways to connect with your audience. This means experimenting with different content formats and channels, iterating and innovating on what’s been done before, and continuously finding ways to keep people engaged.
+            Strategic, analytical, and business-minded. The great thing about digital marketing is that it’s measurable, allowing you to track key success metrics and see exactly how and why your marketing efforts might succeed or fail. It’s therefore crucial to be strategic, comfortable with data, and able to tie your work to the overarching business goals.
+            Excellent collaborators and communicators. As a digital marketer, you’ll never walk alone! You’ll rely on designers, copywriters, and other creative experts to help you produce assets for your marketing campaigns. And, depending on your exact role, you may also find yourself in direct contact with customers and followers. Communication skills and a collaborative spirit are a must!
+            Become a digital marketer if…
+            A career in digital marketing will see you getting creative, collaborating with different stakeholders, and keeping track of campaign performance and analytics. Consider becoming a digital marketer if you are naturally curious and able to think outside the box, if you prefer to work as part of a team, and if you want to have a measurable impact on company performance.
+            
+            Learn more: What are the most in-demand digital marketing jobs?
+            
+            8. Career overview: Product manager
+            It’s great that product management comes last (but very much not least) in this list. This is because it ties most, if not all, of the other job titles together.
+            
+            Companies use product managers to plan, coordinate, and deliver product development for their customers. This will typically involve engaging with stakeholders from across the company, from UX/UI designers to even digital marketers. Ultimately, anyone who is involved with the product or service in some way will be in contact with the product manager.
+            
+            So what does a professional product manager actually do? Let’s have a look.
+            
+            What does a product manager do? Day-to-day tasks
+            Essentially a product manager develops a strategy and a vision for a product or service, and then coordinates and oversees the implementation of that vision.
+            
+            Product managers are the go-to person for anything relating to the product. They collaborate closely with many different stakeholders across the business—including the leadership team, designers, developers, sales and marketing, and customer care teams. As a result of this it’s no surprise that the position requires people who boast a blend of collaboration, strategy, and pragmatism.
+            
+            Considering that the role of product manager can vary greatly depending on the size and type of company, as well as the industry you’re working in, what you’ll do as a PM depends. Despite that, if you are thinking of following the product management career path, expect to be carrying out some of these tasks:
+            
+            Curating and managing an ideas backlog, prioritizing which problems to solve and when
+            Conducting market and competitor research
+            Working with engineers and designers to define product requirements
+            Creating a product roadmap to lay out the product vision
+            Working closely with customers, stakeholders, designers, and engineers to build proof of concepts and prototypes
+            Building strong cross-functional relationships
+            Helping to design and run experiments, and commissioning customer insights and user research
+            Working closely with marketing and sales teams to drive adoption of the product by new customers
+            Identifying opportunities for product improvements, changes, and additions
+            Acting as the number one point of contact for anything relating to the product
+            Product managers by their very nature are unconscious collaborators, working cross-functionally with design and development teams to deliver their projects.
+            
+            What are the key traits of a product manager?
+            If you’re considering a career in product management, you’ll want to be able to naturally communicate with stakeholders. Product managers also tend to be:
+            
+            Strategic and business-minded. If you want to be a successful product manager, then having business-savvy is a key asset. Being able to assess and analyse the user data available, balance it with the business needs and team capacities and then use all that to inform a cohesive and effective product strategy is at the core of your work.
+            Great at communication and collaboration. In case you haven’t worked it out by now, in order to achieve your aims and realize the product strategy, you’re going to need to be able to gather and organize the various stakeholders across various technical disciplines. Keeping many plates spinning at the same time while also ensuring that everyone is pulling in the same direction is part of a product manager’s superpowers.
+            Empathetic. This is not just empathy for the user, which needs to be boiled down into data and then realized for creating a user story; you’ll also need to have empathy for the various stakeholders you work with as well. Being aware of this while also balancing them against business needs and the project’s aims is the making of a great PM.
+            Become a product manager if…
+            A career in product management will see you becoming the ultimate collaborator. You’ll be considering the user’s needs as you draw up strategies for the development of new products.
+            
+            Consider becoming a product manager if you’re great at balancing the customer’s needs with the business goals, a natural communicator and a strategic thinker.
+            
+            Learn more: What is product management?
+            
+            9. How do I figure out which of these career paths is right for me?
+            Now you have an idea of what UX designers, UI designers, web developers, data analysts, and digital marketers do, you might have a clear preference in mind.
+            
+            But what if you’re still struggling to decide? Perhaps the user-centric nature of UX design appeals to you, but you also like the idea of learning how to code. Maybe you just can’t choose between web development and data analytics, or wish there was a way to combine the work of a UI designer with programming.
+            
+            When it comes to choosing your tech career path, it’s important to remember that you’re not confined to one discipline. Many UX designers also go on to master UI design skills, and vice versa.
+            
+            Likewise, it’s not uncommon for UX and UI designers to pick up some frontend development skills. Multiskilled tech professionals are always highly sought-after, and there’s nothing stopping you from branching out into other disciplines later on.
+            
+            Before you commit to anything, make sure you try it out first. Our free short courses have been designed for this very purpose: to provide a no-strings introduction to each field. Try out a few free short courses, attend workshops and meetups, and speak to people already working in the field. It can also be helpful to browse job descriptions—they’ll give you a good idea of what companies expect from each role.
+            
+            Finally, take the time to do some market research. What salary can you expect to earn with each job title? What’s the employment outlook? What specialist career paths might you be able to pursue further down the line? We’ve included some useful links at the end of this post to help you!
+            
+            10. Choosing your tech career path: Key takeaways
+            So there you have it: an introduction to six of the most rewarding careers in tech right now. If one job title in particular resonates with you, consider trying an introductory short course or discussing your next steps with a career advisor. To find out more about what kind of salary you might expect, check out this article on what technology jobs pay.
+            
+            Still not sure? Try our free online tech career quiz, or if you’re still in high school, explore our guide to what to do after high school.
+            
+            Then it’s time to get started on that market research we talked about. Find out as much as you can about each field, and connect with people who are already in the industry. And remember, you’re not limited to just one discipline: you can pick up additional skills and specializations as you go.
+            
+            Getting an entry-level tech job doesn’t have to be scary. If you’d like to learn more about becoming a UX designer, a UI designer, a web developer, a data analyst, a product manager, or a digital marketer, check out the following articles and guides:
+            
+            Further reading for UX:
+            
+            What salary will I earn as a UX designer?
+            How to become a UX designer (Guaranteed!)
+            A guide to the best UX design bootcamps and how to choose one
+            Maureen’s story: How I Became A UX Designer And Got My First Job With No Industry Experience
+            The ultimate UX reading list
+            What to look for in a UX design certification
+            Further reading for UI:
+            
+            Are UI designers in demand? Here’s the current industry outlook
+            How to get started in UI design (A 5-step guide)
+            What qualifications do you need to become a UI designer?
+            Further reading for web development:
+            
+            What is a typical day in the life of a web developer?
+            How much will I earn as a web developer?
+            What qualifications do you need to become a web developer?
+            Further reading for data analytics:
+            
+            How much will I earn as a data analyst?
+            What is a typical day in the life of a data analyst?
+            The top 5 skills that every data analyst needs to master
+            Further reading for digital marketing:
+            
+            What salary will I earn if I pursue a career in digital marketing?
+            What are the most important skills for a digital marketer to possess?
+            How to become a digital marketing manager: Your career roadmap
+            Further reading for product management:
+            
+            How much does a product manager make?
+            What skills does a product manager need?
+            How to become a product manager: Your complete step-by-step guide
+            What You Should Do Now
+            Check out one of our free short courses in design, data analytics, coding, digital marketing, and product management.
+            
+            Become a qualified UX designer, UI designer, web developer, product manager, digital marketer, or data analyst in less than a year—complete with a job guarantee.
+            
+            Talk to a program advisor to discuss career change and find out which fields are best for you, or check out recent graduate Tanimara’s successful career-change story.
+            
+            This month, we’re offering a partial scholarship worth up to $1,365 off on all of our career-change programs to the first 100 students who apply 🎉 Book your application call and secure your spot now!
+            
+            This article is part of:
+            
+            Career Change
+            All articles
+            
+            Emily Stevens
+            Writer for The CareerFoundry Blog
+            
+            Emily is a professional tech writer and content strategist. She spent over a decade in tech startups, immersed in the world of UX and design thinking. In addition to writing for The CareerFoundry Blog, Emily has been a regular contributor to several industry-leading design publications and wrote a chapter for The UX Careers Handbook. She also has an MSc in Psychology from the University of Westminster.
+            
+            Related Career Change Articles
+            Qualifizierungsgeld: How Employees in Germany Can Upskill While Working
+            Career Change
+            Qualifizierungsgeld: How Employees in Germany Can Upskill While Working
+            April 16, 2024 - 5 minutes read
+            What To Do After High School: The 2024 Guide
+            Career Change
+            What To Do After High School: The 2024 Guide
+            March 21, 2024 - 9 minutes read
+            Why We Need Women in Tech: Industry Insights from Product Designer Maureen Herben
+            Career Change
+            Why We Need Women in Tech: Industry Insights from Product Designer Maureen Herben
+            March 19, 2024 - 4 minutes read
+            What is CareerFoundry?
+            CareerFoundry is an online school for people looking to switch to a rewarding career in tech. Select a program, get paired with an expert mentor and tutor, and become a job-ready designer, developer, or analyst from scratch, or your money back.
+            
+            Learn more about our programs 
+            blog-footer-imagecareerfoundry-logo
+            programs to change your career
+            Product Design
+            UX Design
+            UI Design
+            Web Development
+            Data Analytics
+            Digital Marketing
+            Product Management
+            Introductory Courses
+            Intro to Product Design
+            Intro to UX Design
+            Intro to UI Design
+            Intro to Frontend Development
+            Intro to Data Analytics
+            Intro to Digital Marketing
+            Intro to Product Management
+            advanced courses
+            Voice User Interface Design
+            UI for UX Designers
+            Frontend Development for Designers
+            Animation for UI Designers
+            Python for Web Developers
+            Cloud Computing for Web Developers
+            Machine Learning with Python
+            Data Visualizations with Python
+            company
+            About Us
+            Job Guarantee
+            For Businesses
+            Media
+            Jobs at CareerFoundry
+            Become a Mentor
+            Editorial Policy
+            Hire our Grads
+            Career Services
+            Olivia from CareerFoundry
+            Got questions?
+            Ask Olivia
+            
+            Hi Olivia, I have a question regarding CareerFoundry courses
+            First Name
+            Email Address
+            Ask Olivia
+            We'd love to hear from you!Connect with a program advisor
+                
+            terms and conditions
+             | 
+            privacy policy
+             | 
+            cookie policy
+             | 
+            imprint
+             | 
+            security
+            
+            
+        
+        
+        
+           
+        <!-- Absolutely Positioned Element -->
+        <div class="parent">
+            Parent Container
+            <div class="child">Absolutely Positioned Child</div>
+        </div>
+
+        <!-- Button to Open Modal -->
+        <button class="open-modal-btn" onclick="openModal()">Open Modal</button>
+
+        <!-- Modal/Popup -->
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal" id="modal">
+            <h2>Centered Modal</h2>
+            <p>This is a centered modal popup.</p>
+            <button onclick="closeModal()">Close Modal</button>
+        </div>
+    </div>
+
+    <!-- Sticky Footer -->
+    <div class="footer">
+        Sticky Footer
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').classList.add('show-modal');
+            document.getElementById('modalOverlay').classList.add('show-modal');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show-modal');
+            document.getElementById('modalOverlay').classList.remove('show-modal');
+        }
+    </script>
+
+</body>
+</html>
